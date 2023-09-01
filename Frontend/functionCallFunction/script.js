@@ -29,4 +29,4 @@ function displayWhole(anotherName, age){
 }
 
 var res1 = displayWhole('Richard', 25);
-console.log(res1)
+console.log(res1)   
