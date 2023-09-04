@@ -63,3 +63,19 @@ for (let test = 1; test < 4; test++){
         console.log(`Result ---------- ${res}`);
     }
 }
+
+let testing = 0;
+while(testing <= 10){
+    console.log(`Testing with ${testing}`)
+    testing++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while(dice !== 6){
+    console.log(`You have rolled with ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if(dice === 6){
+        console.log("Loop is going to be end...")
+    }
+}
