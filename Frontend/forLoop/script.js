@@ -8,6 +8,7 @@ const richard = [
     1998,
     'student',
     ['basketball', 'running'],
+    true,
 ]
 
 const types = [];
@@ -48,4 +49,17 @@ for (let i = 0; i < richard.length; i++){
         break;
     }
     console.log(richard[i], typeof(richard[i]));
+}
+
+for(let i = richard.length - 1; i >= 0; i--){
+    console.log(i, richard[i]);
+}
+
+// loop in loop
+for (let test = 1; test < 4; test++){
+    console.log(`Test --------- ${test}`);
+
+    for (let res = 1; res < 6; res++){
+        console.log(`Result ---------- ${res}`);
+    }
 }
