@@ -10,7 +10,7 @@
 // console.log(document.querySelector('.guess').value);
 // document.querySelector('.guess').value = 23;
 
-// Add event listener
+
 let secretNumber = Math.trunc(Math.random() * 20 + 1);
 let score = 20;
 let highscore = 0;
@@ -19,6 +19,7 @@ const displayMessage = function(message){
     document.querySelector('.message').textContent = message;
 }
 
+// Add event listener
 document.querySelector('.check').addEventListener('click', function() {
     // Convert from string to number
     const guess = Number((document.querySelector('.guess').value));
