@@ -11,37 +11,92 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  order: function(startIndex, mainIndex){
-    return [this.starterMenu[startIndex], this.mainMenu[mainIndex]];
-  }
+  order: function(starterIndex, mainIndex){
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+  orderDelivery: function({starterIndex, mainIndex, time, address}){
+    console.log(`Order received! ${this.starterMenu[starterIndex]} 
+    and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
+  },
 };
 
-const arr = [23, 45, 100];
-const first = arr[0];
-const second = arr[1];
-const third = arr[2];
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
 
-const [a, b, c] = arr;
-console.log(arr);
-console.log(a)
-console.log(b)
-console.log(c)
+restaurant.orderDelivery({
+  address: 'Via del Sole, 21',
+  starterIndex: 1,
+});
 
-let [menu1, ,menu2] = restaurant.mainMenu;
-const temp = menu1;
-menu1 = menu2;
-menu2 = temp;
-console.log(menu1)
-console.log(menu2)
-console.log(temp)
+const {name, openingHours, categories} = restaurant;
+console.log(name, openingHours, categories);
 
-console.log(restaurant.order(2, 0))
+const {name: restaurantName, openingHours: hours, categories: tags} = restaurant;
+console.log(restaurantName, hours, tags);
 
-// Receive 2 return values from a function
-const [starter, mainCourse] = restaurant.order(2, 0);
-console.log(starter, mainCourse);
+// Default values
+const { menu = [], starterMenu: starters = []} = restaurant;
+console.log(menu, starters);
 
-const nested = [23, 45, [99, 100]];
-const [test1, , test2] = nested;
-console.log(test1); // 99
-console.log(test2); // 100
+// Mutating variables
+let a = 111; 
+let b = 999;
+const obj = {a: 23, b: 7, c: 14};
+({a, b} = obj);
+console.log(a, b)
+
+// nested objects
+const {fri:{open: o, close: c}} = openingHours;
+console.log(o, c);
+
+
+// Array
+// const arr = [23, 45, 100];
+// const first = arr[0];
+// const second = arr[1];
+// const third = arr[2];
+
+// const [a, b, c] = arr;
+// console.log(arr);
+// console.log(a)
+// console.log(b)
+// console.log(c)
+
+// let [menu1, ,menu2] = restaurant.mainMenu;
+// const temp = menu1;
+// menu1 = menu2;
+// menu2 = temp;
+// console.log(menu1)
+// console.log(menu2)
+// console.log(temp)
+
+// console.log(restaurant.order(2, 0))
+
+// // Receive 2 return values from a function
+// const [starter, mainCourse] = restaurant.order(2, 0);
+// console.log(starter, mainCourse);
+
+// const nested = [23, 45, [99, 100]];
+// const [test1, , test2] = nested;
+// console.log(test1); // 99
+// console.log(test2); // 100
+
+
