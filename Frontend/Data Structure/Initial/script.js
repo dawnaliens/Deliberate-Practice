@@ -11,6 +11,9 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  order: function(startIndex, mainIndex){
+    return [this.starterMenu[startIndex], this.mainMenu[mainIndex]];
+  }
 };
 
 const arr = [23, 45, 100];
@@ -23,3 +26,22 @@ console.log(arr);
 console.log(a)
 console.log(b)
 console.log(c)
+
+let [menu1, ,menu2] = restaurant.mainMenu;
+const temp = menu1;
+menu1 = menu2;
+menu2 = temp;
+console.log(menu1)
+console.log(menu2)
+console.log(temp)
+
+console.log(restaurant.order(2, 0))
+
+// Receive 2 return values from a function
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
+
+const nested = [23, 45, [99, 100]];
+const [test1, , test2] = nested;
+console.log(test1); // 99
+console.log(test2); // 100
