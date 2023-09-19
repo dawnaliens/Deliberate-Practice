@@ -39,7 +39,12 @@ const restaurant = {
   }
 };
 
+// Spread Operator
+const arr = [23, 45, ...[99, 100]];
 
+// REST
+const [first, second, ...others] = [1, 2, 3, 4, 5];
+console.log(first, second, others);
 
 // const arr = [7, 8, 9];
 // const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
