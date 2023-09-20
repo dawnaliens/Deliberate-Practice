@@ -22,3 +22,19 @@ var result = value1 > value2 ? true : false;
 var another = value2 > value3 ? true : false;
 console.log(result);    // false
 console.log(another);   // true
+
+const array = [23, 45, 100];
+const anotherArray = [23, 45, array[0], array[1], array[2]]
+console.log(anotherArray);
+
+const newArr = [...array, 69, 79, 89, ...anotherArray];
+console.log(newArr)
+
+var testArr = new Array();
+console.log(testArr);
+console.log(testArr.length);
+testArr.push(23);
+testArr.push('Richard');
+testArr.push(100);
+console.log(testArr);
+console.log(testArr.length);
