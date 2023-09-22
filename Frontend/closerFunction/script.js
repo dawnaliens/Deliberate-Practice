@@ -40,6 +40,27 @@ const checkIn = function(flightNum, passenger){
     }
 }
 
-checkIn(flight, richard);
-console.log(flight)
-console.log(richard)
+// checkIn(flight, richard);
+// console.log(flight)
+// console.log(richard)
+
+const exit = '2023/09/22';
+
+const Tom = {
+    name: 'Tom',
+    passport: 123456789
+}
+
+const checkOut = function(exitTime, GuestName){
+    exitTime = '2023/09/22';
+    GuestName.name = 'Hi ' + GuestName.name;
+    if(GuestName.passport === 123456789){
+        alert(`${GuestName.name} has checked in.`)
+    }else{
+        alert('Wrong one!')
+    }
+}
+
+checkOut(exit, Tom);
+console.log(exit)
+console.log(Tom)
