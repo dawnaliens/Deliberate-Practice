@@ -30,15 +30,15 @@ const richard = {
     passport: 6456465
 }
 
-const checkIn = function(flightNum, passenger){
-    flightNum = 'CZ100';
-    passenger.name = 'Mr. ' + passenger.name;
-    if (passenger.passport === 6456465){
-        alert('Check in');
-    }else{
-        alert('Wrong Passport!')
-    }
-}
+// const checkIn = function(flightNum, passenger){
+//     flightNum = 'CZ100';
+//     passenger.name = 'Mr. ' + passenger.name;
+//     if (passenger.passport === 6456465){
+//         alert('Check in');
+//     }else{
+//         alert('Wrong Passport!')
+//     }
+// }
 
 // checkIn(flight, richard);
 // console.log(flight)
@@ -72,7 +72,32 @@ const newPassport = function(person){
     person.passport = Math.trunc(Math.random() * 100000000000);
 }
 
-newPassport(richard);
-checkIn(flight, richard);
+// newPassport(richard);
+// checkIn(flight, richard);
 
+const oneWord = function(str){
+    return str.replace(/ /g, '').toLowerCase();
+}
 
+const upperFirstWord = function(str){
+    const [first, ...others] = str.split(' ');
+    return [first.toUpperCase(), ...others].join(' ');
+}
+
+// Higher-Order function
+const transformer = function(str, fn){
+    console.log(`Original string: ${str}`);
+    console.log(`Transformed string: ${fn(str)}`);
+
+    console.log(`Transformed by: ${fn.name}`);
+}
+
+transformer('JavaScript is the best!', upperFirstWord);
+transformer('JavaScript is the best!', oneWord);
+
+const highFive = function(){
+    console.log('55555');
+}
+
+document.body.addEventListener('click', highFive);
+['Richard', 'Tom', 'Fiona'].forEach(highFive);
