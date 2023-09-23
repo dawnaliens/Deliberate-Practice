@@ -44,23 +44,35 @@ const checkIn = function(flightNum, passenger){
 // console.log(flight)
 // console.log(richard)
 
-const exit = '2023/09/22';
+// const exit = '2023/09/22';
 
-const Tom = {
-    name: 'Tom',
-    passport: 123456789
+// const Tom = {
+//     name: 'Tom',
+//     passport: 123456789
+// }
+
+// const checkOut = function(exitTime, GuestName){
+//     exitTime = '2023/09/22';
+//     GuestName.name = 'Hi ' + GuestName.name;
+//     if(GuestName.passport === 123456789){
+//         alert(`${GuestName.name} has checked in.`)
+//     }else{
+//         alert('Wrong one!')
+//     }
+// }
+
+// checkOut(exit, Tom);
+// console.log(exit)
+// console.log(Tom);
+
+const flightNum = flight;
+const passenge = richard;
+
+const newPassport = function(person){
+    person.passport = Math.trunc(Math.random() * 100000000000);
 }
 
-const checkOut = function(exitTime, GuestName){
-    exitTime = '2023/09/22';
-    GuestName.name = 'Hi ' + GuestName.name;
-    if(GuestName.passport === 123456789){
-        alert(`${GuestName.name} has checked in.`)
-    }else{
-        alert('Wrong one!')
-    }
-}
+newPassport(richard);
+checkIn(flight, richard);
 
-checkOut(exit, Tom);
-console.log(exit)
-console.log(Tom)
+
