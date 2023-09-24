@@ -130,3 +130,54 @@ anotherHey('Anna')
 anotherGreet('Hi')('Richard')
 
 testGreet('Hi')('Fiona');
+
+const airPlane = {
+    airline: 'AirNZ',
+    airCode: 'NZ',
+    bookings: [],
+    book(flightNum, name){
+        console.log(`${name} booked a seat on ${this.airline}
+        flight ${this.airCode}${flightNum}`);
+        this.bookings.push({flight: `${this.airCode}${flightNum}`, name})
+    },
+    
+}
+
+airPlane.book(9527, 'Richard Liu');
+airPlane.book(23, 'Smith');
+console.log(airPlane);
+
+
+const airing = {
+    name: 'Richard',
+    airCode: 'CZ',
+    bookings: [],
+};
+
+const book = airPlane.book;
+
+// Error
+// book(23, 'Richard Liu');
+
+// Call Method
+book.call(airing, 23, 'Richard Liu');
+console.log(airing);
+
+book.call(airPlane, 9527, 'William Liang');
+console.log(airPlane);
+
+const swiss = {
+    name: 'Swiss Air Line',
+    airCode: 'LX',
+    bookings: [],
+}
+
+book.call(swiss, 100, 'Fiona Lai');
+console.log(swiss);
+
+// Apply Method
+const flightData = [299, 'George Liu'];
+book.apply(swiss, flightData);
+console.log(swiss)
+
+book.call(swiss, ...flightData);
