@@ -101,3 +101,32 @@ const highFive = function(){
 
 document.body.addEventListener('click', highFive);
 ['Richard', 'Tom', 'Fiona'].forEach(highFive);
+
+const greeting = function(greeting){
+    return function(name){
+        console.log(`${greeting} ${name}`);
+    }
+}
+
+const greeterHey = greeting('Richard');
+greeterHey('Richard');
+greeterHey('Steve');
+
+greeting('Hello')('Richard');
+
+const anotherGreet = (anotherGreet) => {
+    return (anotherName) =>{
+        console.log(`${anotherGreet} ${anotherName}`);
+    }
+}
+
+const testGreet = greeting => name => console.log(
+    `${greeting} ${name}`
+);
+
+const anotherHey = anotherGreet('Richard');
+anotherHey('Fiona')
+anotherHey('Anna')
+anotherGreet('Hi')('Richard')
+
+testGreet('Hi')('Fiona');
