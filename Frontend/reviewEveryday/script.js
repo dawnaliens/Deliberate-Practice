@@ -62,3 +62,19 @@ console.log(array1);
 // Remove the first element
 array1.shift();
 console.log(array1);
+
+const arr23 = [23, 45, 199];
+const newArray = [1, 2, ...arr23];
+console.log(newArray)
+
+var aPerson = new Object()
+aPerson = {
+  name:'Richard',
+  age: 25,
+  city: "Shenzhen",
+  skill: function(greeting){
+    console.log("Hi there " + greeting)
+  },
+}
+
+console.log(aPerson.skill("Hello World"))
