@@ -38,3 +38,27 @@ testArr.push('Richard');
 testArr.push(100);
 console.log(testArr);
 console.log(testArr.length);
+
+let res1 = 100; 
+let res2 = 200; 
+let res3 = 58;
+
+// condition ? exprIfTrue : exprIfFalse
+const result1 = res1 > res2 ? true : false;
+const result2 = res1 > res3 ? true : false;
+const result3 = res3 < res2 ? true : false;
+console.log(result1)
+console.log(result2)
+console.log(result3)
+
+console.log("         ")
+
+let array1 = [23, 45, 99, 100, 200];
+array1.push(258);
+console.log(array1);
+// Remove the last element
+array1.pop();
+console.log(array1);
+// Remove the first element
+array1.shift();
+console.log(array1);

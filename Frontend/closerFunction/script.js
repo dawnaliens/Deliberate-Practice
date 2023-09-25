@@ -181,3 +181,15 @@ book.apply(swiss, flightData);
 console.log(swiss)
 
 book.call(swiss, ...flightData);
+
+// book.call(airing, 23, 'Richard Liu');
+// bind method
+
+const bookEW = book.bind(airPlane);
+const bookLH = book.bind(airing);
+const bookLX = book.bind(swiss);
+bookEW(45, 'Richard Liu')
+
+const bookEW23 = book.bind(airPlane, 23);
+bookEW23('Richard Liu');
+bookEW23('Michael Liang')
