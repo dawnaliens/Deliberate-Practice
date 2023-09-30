@@ -192,4 +192,6 @@ bookEW(45, 'Richard Liu')
 
 const bookEW23 = book.bind(airPlane, 23);
 bookEW23('Richard Liu');
-bookEW23('Michael Liang')
+bookEW23('Michael Liang');
+
+// With event listeners
