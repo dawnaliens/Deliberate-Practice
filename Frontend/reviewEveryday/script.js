@@ -77,4 +77,5 @@ aPerson = {
   },
 }
 
-console.log(aPerson.skill("Hello World"))
+console.log(aPerson.skill("Hello World"));
+
