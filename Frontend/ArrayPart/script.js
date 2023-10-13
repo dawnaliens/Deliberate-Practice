@@ -71,7 +71,7 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -103,16 +103,35 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // // Join
 // console.log(letters.join(' - '))
 
-const arr = [23, 45 ,100];
-console.log(arr[0]);
-console.log(arr.at(1));
+// const arr = [23, 45 ,100];
+// console.log(arr[0]);
+// console.log(arr.at(1));
 
-console.log(arr[arr.length-1]);  // last element
-console.log(arr.slice(-1)[0]);  //100
-console.log(arr.at(-1));  // 100
-console.log(arr.at(-2));  // 45
+// console.log(arr[arr.length-1]);  // last element
+// console.log(arr.slice(-1)[0]);  //100
+// console.log(arr.at(-1));  // 100
+// console.log(arr.at(-2));  // 45
 
-console.log('Richard'.at(0)) // R
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// for (const movement of movements){}
+for (const [i, movement] of movements.entries()){
+  if(movement > 0){
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  }else{
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
+  }
+}
+
+console.log('-------ForEach-------')
+movements.forEach(function(movement) {
+  if(movement > 0){
+    console.log(`You deposited ${movement}`);
+  }else{
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+});
 
 
 
