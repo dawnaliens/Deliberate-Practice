@@ -79,3 +79,4 @@ aPerson = {
 
 console.log(aPerson.skill("Hello World"));
 
+console.log(1 + "Hello World");
