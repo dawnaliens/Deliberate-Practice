@@ -85,3 +85,9 @@ const array23 = [23, 45, 99, 100,200, 400]
 array23.forEach(function(id, name){
   console.log(`${id}: ${name}`)
 })
+
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique);
+currenciesUnique.forEach(function(value, _, map){
+  console.log(`${value}: ${value}`);
+})
