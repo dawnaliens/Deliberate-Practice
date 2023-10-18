@@ -80,3 +80,8 @@ aPerson = {
 console.log(aPerson.skill("Hello World"));
 
 console.log(1 + "Hello World");
+
+const array23 = [23, 45, 99, 100,200, 400]
+array23.forEach(function(id, name){
+  console.log(`${id}: ${name}`)
+})
